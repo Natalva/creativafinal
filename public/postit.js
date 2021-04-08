@@ -14,7 +14,6 @@ const postItContainer = document.getElementById("postit-container")
 postItSubmitButton.addEventListener("click", function() {
   const randomID = `p-${randomInteger(10000, 99999)}` //create a random ID for the post-it
   const postItText = postItInput.value //get the text to place into post-it
-  addPostIt(postItText, randomID, username) //place a post-it element on the SUBMITTER's UI
   socket.emit("new post-it", postItText, randomID, username) //send the post-it text to the server
 })
 
