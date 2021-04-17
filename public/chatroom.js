@@ -16,6 +16,8 @@ socket.on("new-chat-message", function(messageText, username) {
 })
 
 
+
+
 function addMessageToChat(text, username) {
   //create message element
   const message = document.createElement("div")
