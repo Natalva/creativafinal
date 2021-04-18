@@ -2,7 +2,7 @@
 
 <html>
     <head>
-        <title>Portfolio</title>
+        <title>Creativa</title>
         <!-- <link rel="stylesheet" href="chatroom.css"> -->
         
 
@@ -12,14 +12,7 @@
       <!--   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js" integrity="sha512-rMaqGbYalDaQz0lWNF2L8DHPtf4NW+gSZomExS0LcsNyRS4Rmj21+dt97XfXCZE/E569eX72Bh//Jt1EpStgiA==" crossorigin="anonymous"></script> -->
  
     <style type="text/css">
-
-      #workpage{
-        font-size: 23;
-        color: white;
-        position: fixed;
-        top: 10;
-        left:900;
-   }
+  
 
 /*chat design!! */
   /*body {font-family: Arial, Helvetica, sans-serif;}*/
@@ -34,7 +27,7 @@ color:white;
   background: linear-gradient(268.61deg, #4444FF 1.5%, #232356 83.61%);
   color: white;
   padding: 16px 20px;
-  border: none;
+  border: white;
   cursor: pointer;
   opacity: 0.8;
 
@@ -96,19 +89,29 @@ height: 450px;
     height: 10%;
     display: flex;
     justify-content: space-between;
+
+
   }
 
   #message-box input, #message-box button {
     height: 100%;
+
+
   }
 
   #message-box input {
     width: 100%;
+
+
   }
 
 /*set username form*/  
 #username-form {
 	padding: 20px;
+  position: relative;
+  top: 36px;
+ left: -893px;
+
 
 }
 
@@ -119,17 +122,36 @@ height: 450px;
  	position: absolute;
  	bottom:0px;
 	right:0;
+  top:30px;
+
+
  }
-#username-form p{
+
+ /*welcome title */
+/*#username-form p{
 	padding: 20px;
 	background:blue;
 	border-radius: 15px;
-	width:200px;
+	width:190px;
 	background-color: #232356;
-}
+ 
+}*/
+   
+ 
+     
+
 #postit-area{
 
 	padding: 20px;
+
+    overflow-x:scroll;
+    overflow-y:hidden;
+    white-space:nowrap;
+    scroll-snap-type: x mandatory;
+
+
+
+
 }
  
 
@@ -140,15 +162,68 @@ height: 450px;
 	border-radius: 15px;
 	position:relative;
 	margin-bottom:20px;
+	margin:13px;
+
+
+   display:inline-block;
+    overflow:hidden; 
+     vertical-align: middle;
+
+
 
  }
+
+  #postit-container{ 
+
+   position: relative;
+/*  top: 96px;
+*//* left: -693px; 
+*/}
+      #postit-input{
+          background: linear-gradient(268.61deg, #4444FF 1.5%, #232356 83.61%);
+
+      }
+    #postit-submit-button{
+        background: linear-gradient(268.61deg, #4444FF 1.5%, #232356 83.61%);
+
+    }
+
+
+
+
 
  .post-it p{
 
  	word-wrap:break-word;
+
  }
  
+/* #describeit p{
 
+
+  text-align:left;
+    position:relative;
+  margin-top:20px;
+  margin:13px;
+ }*/
+
+ 
+
+#username-input{  
+  background: linear-gradient(268.61deg, #4444FF 1.5%, #232356 83.61%);
+
+
+}
+
+
+
+ #username-submit{  
+  background: linear-gradient(268.61deg, #4444FF 1.5%, #232356 83.61%);
+
+
+ 
+ }
+ 
 
 </style>
 
@@ -160,30 +235,41 @@ height: 450px;
   </div> 
 
 <div class="nav2"> 
-	  <a href="pg2.html">Discover</a>
-  <a href="#link">Login</a>
+	 
+      <a href="pg2.html">Prompts</a>
+      <a href="disover.html">Discover</a>
+      <a href="join.html"> Login </a> 
 </div>
 
+
+  <p id="describeit"> Add as many sticky notes as you like below. <br> You can use these to write down tasks, updates and arrange meeting times.</p>
+
+
 <!-- horozontal scroll / sticky title -->
- <div class="workpage">
+<!--  <div class="workpage">
 	 <h1> Room 1 </h1>
-</div> 
+</div>  -->
 
 <!-- USERNAME INPUT -->
 <div id="username-form">
-  <p>Submit Username:</p>
-  <input id="username-input" type="text">
-  <button id="username-submit">SET NAME</button>
+ <!--  <p>Welcome team 1! </p> -->
+
+<!--   <h3 id="description"> Add as many sticky notes as you like below. <br> You can use these to write down tasks, updates and arrange meeting times.</h3>
+ -->  <input id="username-input" type="text">
+  <button id="username-submit">Username</button>
 </div>
 
 <!-- POST-IT COLLAB ENVIRONMENT -->
-<div id="postit-area">
-  <div id="postit-container"></div>
-  <input type="text" id="postit-input">
-  <button id="postit-submit-button">put post-it</button>
-</div>
+ 
+
+  	<div id="postit-area">
+  	  <div id="postit-container"></div>
+  	  <input type="text" id="postit-input">
+  	  <button id="postit-submit-button">+</button>
+  	</div>
 
 
+ 
 <!-- NOTE: FOR CSS PURPOSES, THIS IS WHAT A GENERATED POST-IT ELEMENT LOOKS LIKE:-->
 
 <!--   <div class="post-it">
@@ -197,11 +283,10 @@ height: 450px;
   </div>  -->
 
 
- 
 
  <!-- chat room -->
 
-<button class="open-button" onclick="openForm()">Chat</button>
+<button  class="open-button" onclick="chatroom()">Chat</button>
 
 <div class="chat-popup" id="myForm">
   <div id="chat-box"></div>
@@ -212,16 +297,22 @@ height: 450px;
 </div>
 
 
-  
+<!-- <button id="chatButton" onclick="chatroom()">CHAT</button> 
+ -->
+
+
+<!--  <button id=“popup-close-button”></button>
+ -->
+
 <div class="padlet-embed" 
 style="border:2px solid #232356;  border-radius:2px;
 box-sizing:
 border-box;
 overflow:hidden;
-position:absolute;
-top:20%;
-left:24%;
-width:45%;
+position:relative;
+top:5%;
+left:2%;
+width:75%;
 background:#F4F4F4">
 
 <p style="padding:0;margin:0"> <iframe src="https://padlet.com/embed/til0hzw1t6etsr7l" frameborder="0" allow="camera;microphone;geolocation" 
@@ -229,14 +320,34 @@ background:#F4F4F4">
 
 
 <script>
-function openForm() {
-  document.getElementById("myForm").style.display = "block";
+// function openForm() {
+//   document.getElementById("myForm").style.display = "block";
+// }
+
+// function closeForm() {
+//   document.getElementById("myForm").style.display = "none";
+
+// }
+
+
+function chatroom(){
+ if( document.getElementById("myForm").style.display = "none"){
+  document.getElementById("myForm").style.display = "block";    
+ }else{
+      document.getElementById("myForm").style.display = "none";
+ }  
 }
 
-function closeForm() {
-  document.getElementById("myForm").style.display = "none";
-}
+// document.getElementById( 'open-button' ).onclick = openForm() {
+//    //do stuff...
+//    closeForm();
+// };
+
+
+
+
 </script>
+
   <script src="/socket.io/socket.io.js"></script> <!-- LOADS IN SOCKET.IO FOR FRONT-END -->
   <script src="username.js"></script>
   <script src="postit.js"></script> <!-- POST-IT JAVASCRIPT -->
