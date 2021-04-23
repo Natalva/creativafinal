@@ -68,12 +68,22 @@ height: 450px;
     color: #fff;
   }
 
-  button:not(.open-button) {
+  button:not(.open-button  ) {
     background: none;
     border: 1px solid #fff;
     color: #fff;
+
   }
 
+
+
+#popup-close-button{
+          margin-left:94%;
+          margin-top:414px;
+          z-index: 34;
+          position: fixed;
+
+}
 
   /* CHATROOM STYLES - BASIC */
   #chat-box {
@@ -104,10 +114,11 @@ height: 450px;
 
 
   }
+  
 
 /*set username form*/  
 /*#username-form {
-	padding: 20px;
+  padding: 20px;
   position: relative;
   top: 36px;
  left: -893px;
@@ -117,11 +128,11 @@ height: 450px;
 
 /*username seen in post it
 */ .username {
- 	padding: 20px;
+  padding: 20px;
 
- 	position: absolute;
- 	bottom:0px;
-	right:0;
+  position: absolute;
+  bottom:0px;
+  right:0;
   top:30px;
 
 
@@ -129,11 +140,11 @@ height: 450px;
 
  /*welcome title */
 /*#username-form p{
-	padding: 20px;
-	background:blue;
-	border-radius: 15px;
-	width:190px;
-	background-color: #232356;
+  padding: 20px;
+  background:blue;
+  border-radius: 15px;
+  width:190px;
+  background-color: #232356;
  
 }*/
    
@@ -142,7 +153,7 @@ height: 450px;
 
 #postit-area{
 
-	padding: 20px;
+  padding: 20px;
 
     overflow-x:scroll;
     overflow-y:hidden;
@@ -156,13 +167,13 @@ height: 450px;
  
 
  .post-it{
- 	padding: 20px;
- 	width:200px;
-	background: linear-gradient(268.61deg, #4444FF 1.5%, #232356 83.61%);
-	border-radius: 15px;
-	position:relative;
-	margin-bottom:20px;
-	margin:13px;
+  padding: 20px;
+  width:200px;
+  background: linear-gradient(268.61deg, #4444FF 1.5%, #232356 83.61%);
+  border-radius: 15px;
+  position:relative;
+  margin-bottom:20px;
+  margin:13px;
 
 
    display:inline-block;
@@ -193,7 +204,7 @@ height: 450px;
 
  .post-it p{
 
- 	word-wrap:break-word;
+  word-wrap:break-word;
 
  }
  
@@ -226,13 +237,13 @@ width:92px;
 
 
   <div class="navbar" >
-    <a href="index2.html" id ="creativa">Creativa</a>
+    <a href="index2.html" id ="creativa">CREATIVA</a>
   </div> 
 
 <div class="nav2"> 
-	 
-      <a href="pg2.html">Prompts</a>
-      <a href="discover.html">Discover</a>
+   
+      <a href="intro.html">Prompts</a>
+      <a href="disover.html">Discover</a>
       <a href="join.html"> Login </a> 
 </div>
 <br><br><br><br><br><br>
@@ -242,7 +253,7 @@ width:92px;
 
 <!-- horozontal scroll / sticky title -->
 <!--  <div class="workpage">
-	 <h1> Room 1 </h1>
+   <h1> Room 1 </h1>
 </div>  -->
 
 <!-- USERNAME INPUT -->
@@ -257,11 +268,11 @@ width:92px;
 <!-- POST-IT COLLAB ENVIRONMENT -->
  
 
-  	<div id="postit-area">
-  	  <div id="postit-container"></div>
-  	  <input type="text" id="postit-input">
-  	  <button id="postit-submit-button">+</button>
-  	</div>
+    <div id="postit-area">
+      <div id="postit-container"></div>
+      <input type="text" id="postit-input">
+      <button id="postit-submit-button">+</button>
+    </div>
 
 
  
@@ -296,8 +307,8 @@ width:92px;
  -->
 
 
-<!--  <button id=“popup-close-button”></button>
- -->
+ <button id="popup-close-button" onclick="chatroom()"> X </button>
+
 
 <div class="padlet-embed" 
 style="border:2px solid #232356;  border-radius:2px;
@@ -311,7 +322,7 @@ width:75%;
 background:#F4F4F4">
 
 <p style="padding:0;margin:0"> <iframe src="https://padlet.com/embed/til0hzw1t6etsr7l" frameborder="0" allow="camera;microphone;geolocation" 
-	style="width:100%;height:608px;display:block;padding:0;margin:0"></iframe></p><div style="padding:8px;text-align:right;margin:0;"><a href="https://padlet.com?ref=embed" style="padding:0;margin:0;border:none;display:block;line-height:1;height:16px" target="_blank"><img src="https://padlet.net/embeds/made_with_padlet.png" width="86" height="16" style="padding:0;margin:0;background:none;border:none;display:inline;box-shadow:none" alt="Made with Padlet"></a></div></div>
+  style="width:100%;height:608px;display:block;padding:0;margin:0"></iframe></p><div style="padding:8px;text-align:right;margin:0;"><a href="https://padlet.com?ref=embed" style="padding:0;margin:0;border:none;display:block;line-height:1;height:16px" target="_blank"><img src="https://padlet.net/embeds/made_with_padlet.png" width="86" height="16" style="padding:0;margin:0;background:none;border:none;display:inline;box-shadow:none" alt="Made with Padlet"></a></div></div>
 
 
 <script>
@@ -328,10 +339,11 @@ background:#F4F4F4">
 function chatroom(){
  if( document.getElementById("myForm").style.display = "none"){
   document.getElementById("myForm").style.display = "block";    
- }else{
-      document.getElementById("myForm").style.display = "none";
- }  
-}
+ // }else{
+ //      document.getElementById("myForm").style.display = "none";
+ //     console.log("none");
+ // }  
+}}
 
 // document.getElementById( 'open-button' ).onclick = openForm() {
 //    //do stuff...
@@ -339,7 +351,14 @@ function chatroom(){
 // };
 
 
+ 
+var popupCloseButton = document.getElementById("popup-close-button");
+popupCloseButton.addEventListener("click", closePopup);
 
+function closePopup(){
+if( document.getElementById("myForm").style.display = "block"){
+  document.getElementById("myForm").style.display = "none";    
+}}
 
 </script>
 

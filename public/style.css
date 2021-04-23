@@ -380,35 +380,40 @@ to   { visibility: visible; }
   /*orange boxes*/
 
 
-.grid-container {
-  display: grid;
+/*#grid-container {
+    display: grid;
   grid-gap: 50px;
   grid-template-columns: auto auto auto auto;
    
-  padding: 10px;
-
-}
+ 
+}*/
 
 .grid-item {
+
+/*position:fixed;
+*/
+  /*  display: grid;
+  grid-gap: 50px;
+  grid-template-columns: auto auto auto auto;
+
+*/
+
    padding: 20px;
   font-size: 13px;
   text-align: center;
 
+
     display:inline-block;
-   /* width:17%;
-    height:auto;*/
     overflow:hidden; 
   
-    
+    top:23px;
     width:330px;
-    height:250;   
+    height:170;   
  
     box-shadow: inset 0px 4px 36px 23px rgba(255, 182, 72, 0.35);
     background-color: #FF4C00;
-    margin:  42 32 42 53;
+    margin:  22 32 42 53;
  
-
-
     color:white;
       border-radius: 25px;
 
